@@ -8,7 +8,7 @@
     ```
 2. Перейдите в директорию проекта:
     ```sh
-    cd имя_проекта
+    cd fastapi_homework
     ```
 3. Создайте и активируйте виртуальное окружение:
     ```sh
@@ -25,6 +25,30 @@
     uvicorn main:app --reload
     ```
 
+##Для Docker
+###Через Билд
+1. Переходим к директории с dockerfile
+   ```sh
+   cd fastapi_homework
+   ```
+2. Билдим образ
+   ```sh
+   docker build -t fastapi-homework .
+   ```
+3. Запускаем образ
+   ```sh
+   docker run -d -p 8000:8000 fastapi-homework
+   ```
+
+###Из образа
+1. Клонируйте образ из репозитория
+    ```sh
+     docker pull fobosyatina/techorda-homework-sailaukhan:latest
+    ```
+3. Запустите контейнер
+    ```sh
+    docker run -d -p 8000:8000 --name techorda_app fobosyatina/techorda-homework-sailaukhan:latest
+    ```
 ## Тестирование
 
 Для тестирования всех эндпоинтов используется Postman. Экспортированная коллекция находится в проекте.
