@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "a8fadea1-eb91-46a7-994f-f991cd0e65b1",
+		"name": "fastapi tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21185215",
+		"_collection_link": "https://crimson-zodiac-97211.postman.co/workspace/Team-Workspace~a3c1f033-aaec-441e-86a5-bcd1fac6f74b/collection/21185215-a8fadea1-eb91-46a7-994f-f991cd0e65b1?action=share&source=collection_link&creator=21185215"
+	},
+	"item": [
+		{
+			"name": "Сумма чисел от 1 до n",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/sum1n/10",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"sum1n",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "n-ное число Фибоначчи",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/fibo?n=10",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"fibo"
+					],
+					"query": [
+						{
+							"key": "n",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Перевернуть строку",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "string",
+						"value": "Hello",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/reverse",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"reverse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить элемент в список",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"element\": \"Apple\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/list",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вычислить выражение",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"expr\": \"15,*,28\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/calculator",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"calculator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/list",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Статус-код 200\", function () {\r",
+					"  pm.response.to.have.status(200);\r",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
