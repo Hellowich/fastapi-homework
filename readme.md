@@ -25,8 +25,8 @@
     uvicorn main:app --reload
     ```
 
-##Для Docker
-###Через Билд
+## Для Docker
+### Через Билд
 1. Переходим к директории с dockerfile
    ```sh
    cd fastapi_homework
@@ -40,7 +40,7 @@
    docker run -d -p 8000:8000 fastapi-homework
    ```
 
-###Из образа
+### Из образа
 1. Клонируйте образ из репозитория
     ```sh
      docker pull fobosyatina/techorda-homework-sailaukhan:latest
